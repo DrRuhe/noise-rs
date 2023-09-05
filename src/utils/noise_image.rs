@@ -10,7 +10,7 @@ use std::path::Path;
 const RASTER_MAX_WIDTH: u16 = 32_767;
 const RASTER_MAX_HEIGHT: u16 = 32_767;
 
-#[derive(Debug,Clone)]
+#[derive(Debug, Clone)]
 pub struct NoiseImage {
     size: (usize, usize),
     border_color: Color,

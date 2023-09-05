@@ -6,6 +6,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Github Link][github badge]][github link]
 [![CI Status][ci badge]][ci link]
 [![Documentation][docs badge]][docs link]
@@ -125,8 +126,8 @@ additional terms or conditions.
 
 Licensed under either of
 
-* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
 
@@ -140,33 +141,18 @@ Project Link: [https://github.com/razaekel/noise-rs][github link]
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [ci link]: https://github.com/razaekel/noise-rs/actions
-
 [ci badge]: https://img.shields.io/github/actions/workflow/status/razaekel/noise-rs/rust.yml?style=for-the-badge&logo=github-actions&logoColor=white
-
 [crates.io link]: https://crates.io/crates/noise
-
 [crates.io version]: https://img.shields.io/crates/v/noise.svg?style=for-the-badge&logo=rust
-
 [docs link]: https://docs.rs/noise
-
 [docs badge]: https://img.shields.io/badge/docs-online-5023dd.svg?style=for-the-badge&logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGZpbGw9IiNmNWY1ZjUiIGQ9Ik00ODguNiAyNTAuMkwzOTIgMjE0VjEwNS41YzAtMTUtOS4zLTI4LjQtMjMuNC0zMy43bC0xMDAtMzcuNWMtOC4xLTMuMS0xNy4xLTMuMS0yNS4zIDBsLTEwMCAzNy41Yy0xNC4xIDUuMy0yMy40IDE4LjctMjMuNCAzMy43VjIxNGwtOTYuNiAzNi4yQzkuMyAyNTUuNSAwIDI2OC45IDAgMjgzLjlWMzk0YzAgMTMuNiA3LjcgMjYuMSAxOS45IDMyLjJsMTAwIDUwYzEwLjEgNS4xIDIyLjEgNS4xIDMyLjIgMGwxMDMuOS01MiAxMDMuOSA1MmMxMC4xIDUuMSAyMi4xIDUuMSAzMi4yIDBsMTAwLTUwYzEyLjItNi4xIDE5LjktMTguNiAxOS45LTMyLjJWMjgzLjljMC0xNS05LjMtMjguNC0yMy40LTMzLjd6TTM1OCAyMTQuOGwtODUgMzEuOXYtNjguMmw4NS0zN3Y3My4zek0xNTQgMTA0LjFsMTAyLTM4LjIgMTAyIDM4LjJ2LjZsLTEwMiA0MS40LTEwMi00MS40di0uNnptODQgMjkxLjFsLTg1IDQyLjV2LTc5LjFsODUtMzguOHY3NS40em0wLTExMmwtMTAyIDQxLjQtMTAyLTQxLjR2LS42bDEwMi0zOC4yIDEwMiAzOC4ydi42em0yNDAgMTEybC04NSA0Mi41di03OS4xbDg1LTM4Ljh2NzUuNHptMC0xMTJsLTEwMiA0MS40LTEwMi00MS40di0uNmwxMDItMzguMiAxMDIgMzguMnYuNnoiPjwvcGF0aD48L3N2Zz4K
-
 [examples link]: /examples/
-
 [fbm image]: /images/fbm.png
-
 [github badge]: https://img.shields.io/badge/github-razaekel/noise--rs-8da0cb?style=for-the-badge&logo=github
-
 [github link]: https://github.com/razaekel/noise-rs
-
 [issues link]: https://github.com/razaekel/noise-rs/issues
-
 [planet surface image]: /images/unscaledFinalPlanet.png
-
 [planet surface 4x]: /images/unscaledFinalPlanet_4x_zoom.png
-
 [planet surface 16x]: /images/unscaledFinalPlanet_16x_zoom.png
-
 [rust version badge]: https://img.shields.io/badge/rust-1.60.0+-93450a.svg?style=for-the-badge&logo=rust
-
 [rust version link]: https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html

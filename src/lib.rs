@@ -11,6 +11,7 @@
 
 #![cfg_attr(not(feature = "std"), no_std)]
 #![deny(missing_copy_implementations)]
+#![deny(missing_debug_implementations)]
 
 #[macro_use]
 extern crate alloc;

@@ -1,5 +1,5 @@
 use crate::{math::interpolate, noise_fns::NoiseFn, utils::noise_map::NoiseMap};
-
+#[derive(Debug, Clone)]
 pub struct NoiseFnWrapper<SourceFn, const DIM: usize>
 where
     SourceFn: Fn([f64; DIM]) -> f64,
@@ -26,6 +26,7 @@ pub trait NoiseMapBuilder<SourceModule> {
     fn build(&self) -> NoiseMap;
 }
 
+#[derive(Debug, Clone)]
 pub struct CylinderMapBuilder<SourceModule>
 where
     SourceModule: NoiseFn<f64, 3>,
@@ -136,6 +137,7 @@ where
     }
 }
 
+#[derive(Debug, Clone)]
 pub struct PlaneMapBuilder<SourceModule, const DIM: usize>
 where
     SourceModule: NoiseFn<f64, DIM>,
@@ -438,6 +440,7 @@ where
     }
 }
 
+#[derive(Debug, Clone)]
 pub struct SphereMapBuilder<SourceModule>
 where
     SourceModule: NoiseFn<f64, 3>,

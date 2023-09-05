@@ -3,6 +3,7 @@ use core::{self, f64::consts::SQRT_2};
 
 use super::{color_gradient::*, noise_image::*, noise_map::*};
 
+#[derive(Debug,Clone)]
 pub struct ImageRenderer {
     // The color gradient used to specify the image colors.
     gradient: ColorGradient,
@@ -15,6 +16,8 @@ pub struct ImageRenderer {
     // Flag specifying whether wrapping is enabled.
     wrap_enabled: bool,
 }
+
+
 
 impl ImageRenderer {
     pub fn new() -> Self {
@@ -356,7 +359,7 @@ impl Default for ImageRenderer {
     }
 }
 
-#[derive(Copy, Clone, Default)]
+#[derive(Copy, Clone, Default,Debug)]
 pub struct LightSource {
     // Azimuth of the light source, in degrees.
     azimuth: f64,

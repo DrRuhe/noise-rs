@@ -24,6 +24,18 @@ pub struct Worley {
     perm_table: PermutationTable,
 }
 
+impl std::fmt::Debug for Worley {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        f.debug_struct("Worley")
+            .field("distance_function", &"dyn Fn(&[f64], &[f64]) -> f64")
+            .field("return_type", &self.return_type)
+            .field("frequency", &self.frequency)
+            .field("seed", &self.seed)
+            .field("perm_table", &self.perm_table)
+            .finish()
+    }
+}
+
 type DistanceFunction = dyn Fn(&[f64], &[f64]) -> f64;
 
 impl Worley {

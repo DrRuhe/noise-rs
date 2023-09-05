@@ -5,7 +5,7 @@ use crate::noise_fns::NoiseFn;
 ///
 /// The get() method multiplies the coordinates of the input value with a
 /// scaling factor before returning the output value from the source function.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ScalePoint<Source> {
     /// Source function that outputs a value
     pub source: Source,

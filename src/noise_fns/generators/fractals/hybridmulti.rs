@@ -8,7 +8,7 @@ use alloc::vec::Vec;
 ///
 /// The result of this multifractal noise is that valleys in the noise should
 /// have smooth bottoms at all altitudes.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct HybridMulti<T> {
     /// Total number of frequency octaves to generate the noise with.
     ///

@@ -8,7 +8,7 @@ use crate::noise_fns::NoiseFn;
 ///
 /// The coordinate system of the input value is assumed to be "right-handed"
 /// (_x_ increases to the right, _y_ increases upward, and _z_ increases inward).
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct RotatePoint<Source> {
     /// Source function that outputs a value
     pub source: Source,

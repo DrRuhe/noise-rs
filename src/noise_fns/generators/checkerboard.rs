@@ -8,7 +8,7 @@ use crate::{core::checkerboard::*, noise_fns::NoiseFn};
 ///
 /// This noise function is not very useful by itself, but it can be used for
 /// debugging purposes.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Checkerboard {
     // Controls the size of the block in 2^(size).
     size: usize,

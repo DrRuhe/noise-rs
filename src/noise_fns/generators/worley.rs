@@ -7,10 +7,11 @@ use crate::{
 use alloc::rc::Rc;
 
 /// Noise function that outputs Worley noise.
-#[derive(Clone)]
+#[derive(Clone, serde::Serialize, serde::Deserialize)]
 pub struct Worley {
     /// Specifies the distance function to use when calculating the boundaries of
     /// the cell.
+    #[serde(skip,default="worley_default_distance_fn")]
     pub distance_function: Rc<DistanceFunction>,
 
     /// Signifies whether the distance from the borders of the cell should be returned, or the
@@ -46,7 +47,7 @@ impl Worley {
         Self {
             perm_table: PermutationTable::new(seed),
             seed,
-            distance_function: Rc::new(distance_functions::euclidean),
+            distance_function: worley_default_distance_fn(),
             return_type: ReturnType::Value,
             frequency: Self::DEFAULT_FREQUENCY,
         }
@@ -76,6 +77,10 @@ impl Worley {
     pub fn set_frequency(self, frequency: f64) -> Self {
         Self { frequency, ..self }
     }
+}
+
+fn worley_default_distance_fn() -> Rc<fn(&[f64], &[f64]) -> f64> {
+    Rc::new(distance_functions::euclidean)
 }
 
 impl Default for Worley {

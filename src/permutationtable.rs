@@ -5,6 +5,10 @@ use rand::{
     Rng, SeedableRng,
 };
 use rand_xorshift::XorShiftRng;
+use serde::{
+    de::{SeqAccess, Visitor},
+    ser::SerializeSeq,
+};
 
 const TABLE_SIZE: usize = 256;
 
@@ -19,6 +23,59 @@ pub trait NoiseHasher: Send + Sync {
 #[derive(Copy, Clone)]
 pub struct PermutationTable {
     values: [u8; TABLE_SIZE],
+}
+
+impl serde::Serialize for PermutationTable {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let mut seq = serializer.serialize_seq(Some(TABLE_SIZE))?;
+        for value in self.values {
+            seq.serialize_element(&value)?;
+        }
+        seq.end()
+    }
+}
+
+struct PermutationTableDeserializer;
+
+impl<'de> Visitor<'de> for PermutationTableDeserializer {
+    type Value = PermutationTable;
+
+    fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+        formatter.write_str("ArrayKeyedMap key value sequence.")
+    }
+
+    fn visit_seq<A>(self, mut seq: A) -> Result<Self::Value, A::Error>
+    where
+        A: SeqAccess<'de>,
+    {
+        let mut new_obj = PermutationTable {
+            values: [0; TABLE_SIZE],
+        };
+        for i in 0..TABLE_SIZE {
+            if let Some(deserialized_value) = seq.next_element()? {
+                new_obj.values[i] = deserialized_value;
+            } else {
+                return Err(serde::de::Error::custom(format!(
+                    "PermutationTable must have exactly {} elements, found {}",
+                    TABLE_SIZE, i
+                )));
+            }
+        }
+
+        Ok(new_obj)
+    }
+}
+
+impl<'de> serde::Deserialize<'de> for PermutationTable {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        deserializer.deserialize_seq(PermutationTableDeserializer)
+    }
 }
 
 impl Distribution<PermutationTable> for Standard {

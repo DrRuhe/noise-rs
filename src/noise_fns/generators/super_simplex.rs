@@ -5,7 +5,7 @@ use crate::{
 };
 
 /// Noise function that outputs 2/3-dimensional Super Simplex noise.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct SuperSimplex {
     seed: u32,
     perm_table: PermutationTable,

@@ -14,7 +14,7 @@ use alloc::vec::Vec;
 /// smooth. As the value moves further away from zero, higher frequencies will
 /// not be as damped and thus will grow more jagged as iteration progresses.
 ///
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct BasicMulti<T> {
     /// Total number of frequency octaves to generate the noise with.
     ///

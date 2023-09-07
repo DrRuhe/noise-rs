@@ -20,7 +20,7 @@ use alloc::vec::Vec;
 /// and ever-decreasing amplitude.
 ///
 /// fBm is commonly referred to as Perlin noise.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Fbm<T> {
     /// Total number of frequency octaves to generate the noise with.
     ///

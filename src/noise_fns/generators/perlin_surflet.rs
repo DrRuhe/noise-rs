@@ -8,7 +8,7 @@ use crate::{
 ///
 /// THis is a variant of original perlin noise, based on the principles of simplex noise to
 /// calculate the values at a point using wavelets instead of interpolated gradients.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct PerlinSurflet {
     seed: u32,
     perm_table: PermutationTable,

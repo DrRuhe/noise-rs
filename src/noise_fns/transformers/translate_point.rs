@@ -5,7 +5,7 @@ use crate::noise_fns::NoiseFn;
 ///
 /// The get() method moves the coordinates of the input value by a translation
 /// amount before returning the output value from the source function.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct TranslatePoint<Source> {
     /// Source function that outputs a value
     pub source: Source,

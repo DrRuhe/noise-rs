@@ -15,7 +15,7 @@ use core::cell::{Cell, RefCell};
 /// multiple noise functions. If a source function is not cached, the source
 /// function will redundantly calculate the same output value once for each
 /// noise function in which it is included.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Cache<Source> {
     /// Outputs the value to be cached.
     pub source: Source,

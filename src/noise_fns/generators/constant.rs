@@ -7,7 +7,7 @@ use crate::noise_fns::NoiseFn;
 ///
 /// This function is not very useful by itself, but can be used as a source
 /// function for other noise functions.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Constant {
     /// Constant value.
     pub value: f64,

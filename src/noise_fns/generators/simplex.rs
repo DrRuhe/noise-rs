@@ -6,7 +6,7 @@ use crate::{
 
 /// Noise function that outputs N-dimensional Simplex noise.
 ///
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Simplex {
     seed: u32,
     hasher: PermutationTable,

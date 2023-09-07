@@ -11,7 +11,7 @@ use alloc::vec::Vec;
 /// This noise function is nearly identical to fBm noise, except this noise
 /// function modifies each octave with an absolute-value function. See the
 /// documentation for fBm for more information.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Billow<T> {
     /// Total number of frequency octaves to generate the noise with.
     ///

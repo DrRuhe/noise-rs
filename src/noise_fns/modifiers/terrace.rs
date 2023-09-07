@@ -25,7 +25,7 @@ use core::marker::PhantomData;
 ///
 /// This noise function is often used to generate terrain features such as the
 /// stereotypical desert canyon.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Terrace<T, Source, const DIM: usize>
 where
     Source: NoiseFn<T, DIM>,

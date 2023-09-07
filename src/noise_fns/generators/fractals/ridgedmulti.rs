@@ -20,7 +20,7 @@ use alloc::vec::Vec;
 ///
 /// Ridged-multifractal noise is often used to generate craggy mountainous
 /// terrain or marble-like textures.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct RidgedMulti<T> {
     /// Total number of frequency octaves to generate the noise with.
     ///

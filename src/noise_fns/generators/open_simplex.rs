@@ -9,7 +9,7 @@ use crate::{
 };
 
 /// Noise function that outputs 2/3/4-dimensional Open Simplex noise.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct OpenSimplex {
     seed: u32,
     perm_table: PermutationTable,

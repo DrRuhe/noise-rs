@@ -5,7 +5,7 @@ use crate::{core::spheres::*, math::vectors::Vector2, noise_fns::NoiseFn};
 /// This noise function outputs concentric cylinders centered on the origin. The
 /// cylinders are oriented along the z axis similar to the concentric rings of
 /// a tree. Each cylinder extends infinitely along the z axis.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Cylinders {
     /// Frequency of the concentric objects.
     pub frequency: f64,

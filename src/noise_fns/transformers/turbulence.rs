@@ -8,7 +8,7 @@ use crate::noise_fns::{Fbm, MultiFractal, NoiseFn, Seedable};
 /// retrieving the output value from the source function. To control the
 /// turbulence, an application can modify its frequency, its power, and its
 /// roughness.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Turbulence<Source, F>
 where
     F: Default + Seedable,

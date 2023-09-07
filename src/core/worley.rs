@@ -4,7 +4,7 @@ use crate::{
 };
 use core::f64;
 
-#[derive(Clone, Copy, Debug,serde::Serialize,serde::Deserialize)]
+#[derive(Clone, Copy, Debug, serde::Serialize, serde::Deserialize)]
 pub enum ReturnType {
     Distance,
     Value,

@@ -11,7 +11,7 @@ use alloc::rc::Rc;
 pub struct Worley {
     /// Specifies the distance function to use when calculating the boundaries of
     /// the cell.
-    #[serde(skip,default="worley_default_distance_fn")]
+    #[serde(skip, default = "worley_default_distance_fn")]
     pub distance_function: Rc<DistanceFunction>,
 
     /// Signifies whether the distance from the borders of the cell should be returned, or the
@@ -79,7 +79,7 @@ impl Worley {
     }
 }
 
-fn worley_default_distance_fn() -> Rc<fn(&[f64], &[f64]) -> f64> {
+fn worley_default_distance_fn() -> Rc<DistanceFunction> {
     Rc::new(distance_functions::euclidean)
 }
 

@@ -1718,7 +1718,7 @@ fn main() {
     //        100000,
     //    );
 
-    let noise_map = PlaneMapBuilder::new(&unscaledFinalPlanet)
+    let noise_map = PlaneMapBuilder::<_, 3>::new(&unscaledFinalPlanet)
         .set_size(1024, 1024)
         .set_x_bounds(-2.0, 2.0)
         .set_y_bounds(-2.0, 2.0)
@@ -1731,7 +1731,7 @@ fn main() {
         "unscaledFinalPlanet.png",
     );
 
-    let noise_map = PlaneMapBuilder::new(&unscaledFinalPlanet)
+    let noise_map = PlaneMapBuilder::<_, 3>::new(&unscaledFinalPlanet)
         .set_size(1024, 1024)
         .set_x_bounds(-0.5, 0.5)
         .set_y_bounds(-0.5, 0.5)
@@ -1744,7 +1744,7 @@ fn main() {
         "unscaledFinalPlanet_4x_zoom.png",
     );
 
-    let noise_map = PlaneMapBuilder::new(&unscaledFinalPlanet)
+    let noise_map = PlaneMapBuilder::<_, 3>::new(&unscaledFinalPlanet)
         .set_size(1024, 1024)
         .set_x_bounds(-0.0, 0.25)
         .set_y_bounds(-0.125, 0.125)

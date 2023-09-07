@@ -19,10 +19,13 @@ fn main() {
         .add_control_point(1.0)
         .invert_terraces(true);
 
-    utils::write_example_to_file(&PlaneMapBuilder::new(terrace).build(), "terrace.png");
+    utils::write_example_to_file(
+        &PlaneMapBuilder::<_, 3>::new(terrace).build(),
+        "terrace.png",
+    );
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(terrace_inverted).build(),
+        &PlaneMapBuilder::<_, 3>::new(terrace_inverted).build(),
         "terrace_inverted.png",
     );
 }

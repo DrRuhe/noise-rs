@@ -17,11 +17,14 @@ fn main() {
         .set_falloff(0.0);
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(select1)
+        &PlaneMapBuilder::<_, 3>::new(select1)
             .set_x_bounds(-1.0, 1.0)
             .set_y_bounds(-1.0, 1.0)
             .build(),
         "select1.png",
     );
-    utils::write_example_to_file(&PlaneMapBuilder::new(select2).build(), "select2.png");
+    utils::write_example_to_file(
+        &PlaneMapBuilder::<_, 3>::new(select2).build(),
+        "select2.png",
+    );
 }

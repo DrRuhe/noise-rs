@@ -11,5 +11,8 @@ fn main() {
     let perlin = Perlin::default();
     let displace = Displace::new(cylinders, cboard, perlin, constant, constant);
 
-    utils::write_example_to_file(&PlaneMapBuilder::new(displace).build(), "displace.png");
+    utils::write_example_to_file(
+        &PlaneMapBuilder::<_, 3>::new(displace).build(),
+        "displace.png",
+    );
 }

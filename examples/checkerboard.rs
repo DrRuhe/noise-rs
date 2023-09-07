@@ -10,7 +10,7 @@ fn main() {
     let checker = Checkerboard::new(0);
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(checker)
+        &PlaneMapBuilder::<_, 3>::new(checker)
             .set_x_bounds(-5.0, 5.0)
             .set_y_bounds(-5.0, 5.0)
             .build(),

@@ -9,5 +9,8 @@ fn main() {
     let perlin = Perlin::default();
     let multiply = Multiply::new(cyl, perlin);
 
-    utils::write_example_to_file(&PlaneMapBuilder::new(multiply).build(), "multiply.png");
+    utils::write_example_to_file(
+        &PlaneMapBuilder::<_, 3>::new(multiply).build(),
+        "multiply.png",
+    );
 }

@@ -18,7 +18,7 @@ where
         worley_2d(hasher, distance_function, return_type, point)
     };
     utils::write_example_to_file(
-        &PlaneMapBuilder::new_fn(|point| closure(point.into(), &hasher))
+        &PlaneMapBuilder::<_, 2>::new_fn(|point| closure(point.into(), &hasher))
             .set_size(256, 256)
             .build(),
         name,
@@ -34,7 +34,7 @@ where
         worley_3d(hasher, distance_function, return_type, point)
     };
     utils::write_example_to_file(
-        &PlaneMapBuilder::new_fn(|point| closure(point.into(), &hasher))
+        &PlaneMapBuilder::<_, 3>::new_fn(|point| closure(point.into(), &hasher))
             .set_size(256, 256)
             .build(),
         name,
@@ -50,7 +50,7 @@ where
         worley_4d(hasher, distance_function, return_type, point)
     };
     utils::write_example_to_file(
-        &PlaneMapBuilder::new_fn(|point| closure(point.into(), &hasher))
+        &PlaneMapBuilder::<_, 4>::new_fn(|point| closure(point.into(), &hasher))
             .set_size(256, 256)
             .build(),
         name,

@@ -9,7 +9,7 @@ fn main() {
     let abs = Abs::new(perlin);
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(Negate::new(abs)).build(),
+        &PlaneMapBuilder::<_, 3>::new(Negate::new(abs)).build(),
         "negate.png",
     );
 }

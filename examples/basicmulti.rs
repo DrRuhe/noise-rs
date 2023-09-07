@@ -10,21 +10,21 @@ fn main() {
     let basicmulti = BasicMulti::<Perlin>::default();
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(basicmulti).build(),
+        &PlaneMapBuilder::<_, 3>::new(basicmulti).build(),
         "basicmulti_perlin.png",
     );
 
     let basicmulti = BasicMulti::<Worley>::default();
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(basicmulti).build(),
+        &PlaneMapBuilder::<_, 3>::new(basicmulti).build(),
         "basicmulti_worley.png",
     );
 
     let basicmulti = BasicMulti::<BasicMulti<Perlin>>::default();
 
     utils::write_example_to_file(
-        &PlaneMapBuilder::new(basicmulti).build(),
+        &PlaneMapBuilder::<_, 3>::new(basicmulti).build(),
         "basicmulti_basicmulti_perlin.png",
     );
 }

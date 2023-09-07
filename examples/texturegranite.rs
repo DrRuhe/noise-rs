@@ -33,11 +33,11 @@ fn main() {
         .set_power(1.0 / 8.0)
         .set_roughness(6);
 
-    let planar_texture = PlaneMapBuilder::new(&final_granite)
+    let planar_texture = PlaneMapBuilder::<_, 3>::new(&final_granite)
         .set_size(1024, 1024)
         .build();
 
-    let seamless_texture = PlaneMapBuilder::new(&final_granite)
+    let seamless_texture = PlaneMapBuilder::<_, 3>::new(&final_granite)
         .set_size(1024, 1024)
         .set_is_seamless(true)
         .build();
